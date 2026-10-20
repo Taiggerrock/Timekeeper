@@ -12,7 +12,7 @@ Timekeeper runs inside the existing Omarchy shell. It does not start a separate 
 
 ## Install
 
-After this repository is public, install it with:
+Install from the public GitHub repository with:
 
 ```sh
 omarchy plugin add https://github.com/Taiggerrock/Timekeeper.git --enable
@@ -38,7 +38,7 @@ The timer uses an editable `HH:MM:SS` display. Click a field to select its digit
 
 The stopwatch supports Start/Stop, Reset, Lap, and Copy Time. Lap saves the current elapsed time without stopping the watch. Stopwatch values use `HH:MM:SS:ss`, with centiseconds in the final field. Selecting a saved lap pauses the stopwatch and loads its value. Add Stopwatch creates an independent stopwatch.
 
-Additional counters start paused. Their names are editable and saved. Each counter has independent timing state and controls. Histories and additional-counter lists retain up to 50 entries and display five rows at a time with scrolling.
+Additional counters start paused. Their names are editable and saved. Each counter has independent timing state and controls. Histories retain up to 50 entries. Additional-counter lists have no configured item limit and display five rows at a time with scrolling.
 
 When one or more counters run, the bar shows compact time readouts. Main counters display only time; additional counters display `Name - 00:00`. Timer values use `MM:SS` below one hour and `HH:MM` from one hour onward. Stopwatch compact values use `MM:SS:ss` below one hour and `HH:MM:ss` from one hour onward. The timer uses the normal themed foreground, and stopwatch digits use the theme's urgent color. Hovering or focusing the readout shows full active-counter values. With no active counters, the themed idle icon returns.
 
@@ -48,7 +48,7 @@ Timekeeper stores state at `${XDG_STATE_HOME:-$HOME/.local/state}/omarchy/timeke
 
 Durations are stored in milliseconds. Timers are limited to `99:59:59`; stopwatch hours can exceed two digits. During a live session, elapsed time uses Quickshell's monotonic timer and Linux boot uptime so wall-clock changes do not alter running counters and suspend time is included. On startup, saved timestamps are rebased using UTC; recovery across reboot therefore depends on the system clock. Timer completion sends a low-urgency, silent desktop notification.
 
-Timekeeper does not read or modify files outside its own state directory. Clipboard and notification commands are invoked with argument arrays; timer names and values are not interpolated into shell commands.
+Timekeeper reads Linux `/proc/uptime` for suspend-aware timekeeping and stores or modifies user data only in its own state directory. Clipboard and notification commands are invoked with argument arrays; timer names and values are not interpolated into shell commands.
 
 ## Remove
 

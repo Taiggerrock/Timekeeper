@@ -19,7 +19,7 @@ The live suite verified first-open controls, immediate additional-counter displa
 
 ## Limits
 
-Physical reboot and suspend recovery were not exercised. Manual desktop theme switching was not performed; reactive theme bindings were exercised by the QML fixture. Clipboard integration and notification delivery were not manually tested. QML lint still reports `unqualified` access warnings that do not prevent loading or the runtime checks.
+Physical reboot and suspend recovery were not exercised. Manual desktop theme switching was not performed; reactive theme bindings were exercised by the QML fixture. Clipboard integration and notification delivery were not manually tested. The full lifecycle sequence from the development guide—disable, re-enable, shell restart, and plugin removal—is not covered by this acceptance record. QML lint still reports `unqualified` access warnings that do not prevent loading or the runtime checks.
 
 ## Run the checks
 
