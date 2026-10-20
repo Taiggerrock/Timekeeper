@@ -1,0 +1,16 @@
+# Local test snapshots and logs
+.test-artifacts/
+*.log
+
+# Quickshell/QML generated caches
+*.qmlc
+*.jsc
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
+# Local environments and dependencies
+.env
+node_modules/

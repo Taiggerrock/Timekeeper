@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "bone.timekeeper",
+  "name": "Timekeeper",
+  "version": "1.0.21",
+  "author": "Bone",
+  "license": "MIT",
+  "description": "Independent timers and stopwatches with persistent histories.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Timekeeper",
+    "category": "Time",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
